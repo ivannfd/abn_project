@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="UTF-8">
+    <title> Document </title>
+    {% load static %}
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <style>
+        .text-field__input {
+            color: white;
+            margin: 20px;
+
+        }
+    </style>
+</head>
+
+
+<body>
+<div class="conainer">
+    <form role="form" onsubmit="return check(this)" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+
+            <label for="number" class="control-label col-md-2"> Введите количество атомов </label>
+            <div class="col-md-10">
+
+                <input type="number" сlass="form-control" id="nu" placeholder="Кол-во атомов">
+
+
+            </div>
+        </div>
+
+
+        <div class="col-md-2">
+            <input type="submit" class="text-field__input" name="submit" id="ar" style="color:black" value="Готово">
+        </div>
+
+    </form>
+</div>
+
+<div id="place"></div>
+
+<div id="result"></div>
+
+<script src="{% static '/js/my.js' %}"></script>
+
+</body>
+
+</html>
